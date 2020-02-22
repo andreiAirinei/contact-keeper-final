@@ -6,10 +6,10 @@ const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
-  const { id, name, email, phone, type } = contact;
+  const { _id, name, email, phone, type } = contact;
 
   const handleDelete = () => {
-    deleteContact(id);
+    deleteContact(_id);
     clearCurrent();
   }
 
@@ -27,8 +27,8 @@ const ContactItem = ({ contact }) => {
         </span>
       </h3>
       <ul className="list">
-        {email && (<li><i className="fas fa-envelope-open"> {email}</i></li>)}
-        {phone && (<li><i className="fas fa-phone"> {phone}</i></li>)}
+        {email && (<li><i className="fas fa-envelope-open" /> {email}</li>)}
+        {phone && (<li><i className="fas fa-phone" /> {phone}</li>)}
       </ul>
       <p>
         <button className="btn btn-dark btn-sm" onClick={() => setCurrent(contact)}>Edit</button>

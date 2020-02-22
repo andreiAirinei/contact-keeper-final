@@ -10,8 +10,6 @@ const ContactFilter = () => {
   // Refs provide a way to access DOM nodes or React elements created in the render method.
   const text = useRef('');
 
-  console.log(text)
-
   useEffect(() => {
     if (filtered === null) {
       text.current.value = '';
